@@ -25,21 +25,15 @@ axios
   .then((res) => {
       console.log(res);  
       const articleData1 = res.data.articles.bootstrap
-      console.log(articleData1)
        articleData1.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
       const articleData2 = res.data.articles.javascript
-      console.log(articleData2)
       articleData2.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
       const articleData3 = res.data.articles.jquery
-      console.log(articleData3)
       articleData3.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
       const articleData4 = res.data.articles.node
-      console.log(articleData4)
       articleData4.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
       const articleData5 = res.data.articles.technology
-      console.log(articleData5)
       articleData5.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
-  
       })
   .catch(err => {
     console.log('oh no!, ', err);
