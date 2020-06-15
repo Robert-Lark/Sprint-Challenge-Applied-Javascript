@@ -10,6 +10,8 @@
 //
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
+const headerContainer = document.querySelector('.header-container');
+
 
 function Header() {
 
@@ -26,9 +28,13 @@ function Header() {
     newH1.innerText = 'Lambda Times';
     newSpan1.innerText='98°';
     //put it on the page
-    const headerContainer = document.querySelector('.header-container');
+    
     headerContainer.appendChild(newDiv);
-
+    newDiv.appendChild(newSpan);
+    newDiv.appendChild(newH1);
+    newDiv.appendChild(newSpan1);
+    
+    return newDiv
 }
 
 Header();
