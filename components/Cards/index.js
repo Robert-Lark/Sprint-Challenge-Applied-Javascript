@@ -16,5 +16,57 @@
 //     <span>By {author's name}</span>
 //   </div>
 // </div>
-//
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+const body = document.querySelector('body');
+
+axios
+  .get(`https://lambda-times-backend.herokuapp.com/articles`)
+  .then((res) => {
+      console.log(res);  
+      const articleData1 = res.data.articles.bootstrap
+       articleData1.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
+      const articleData2 = res.data.articles.javascript
+      articleData2.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
+      const articleData3 = res.data.articles.jquery
+      articleData3.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
+      const articleData4 = res.data.articles.node
+      articleData4.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
+      const articleData5 = res.data.articles.technology
+      articleData5.forEach(res => body.appendChild(cardCreator(res.headline, res.authorName, res.authorPhoto)))
+      })
+  .catch(err => {
+    console.log('oh no!, ', err);
+  })
+
+
+
+function cardCreator(headline, authorsName, authorsImage) {
+///create the elements
+const cardDiv1 = document.createElement('div');
+const cardDiv2 = document.createElement('div');
+const cardDiv3 = document.createElement('div');
+const cardDiv4 = document.createElement('div');
+const cardImg = document.createElement('img');
+const cardSpan = document.createElement('span');
+///style them
+cardDiv1.classList.add('card');
+cardDiv2.classList.add('headline');
+cardDiv3.classList.add('author');
+cardDiv4.classList.add('img-container');
+cardDiv2.innerText = headline;
+cardImg.src = authorsImage;
+cardSpan.innerText = authorsName;
+
+//Appending
+cardDiv1.appendChild(cardDiv2);
+cardDiv1.appendChild(cardDiv3);
+cardDiv3.appendChild(cardDiv4);
+cardDiv4.appendChild(cardImg);
+cardDiv3.appendChild(cardSpan);
+
+return cardDiv1;
+
+
+}
+
