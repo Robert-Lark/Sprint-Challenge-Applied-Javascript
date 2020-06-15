@@ -29,8 +29,8 @@ carousel.classList.add('carousel');
       return carouselImg
     }
   
-  const imgDiv1 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.40.56 PM.png");
-  const imgDiv2 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.27 PM.png");
+  const imgDiv1 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.27 PM.png");
+  const imgDiv2 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.40.56 PM.png");
   const imgDiv3 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.48 PM.png");
   const imgDiv4 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.17 PM.png");
 
@@ -47,10 +47,49 @@ carousel.classList.add('carousel');
   carouselbuttonRight.classList.add('right-button');
   carousel.appendChild(carouselbuttonRight);
 
+  imgDiv1.style = 'display: inline;'
+let i = 0;
 
+carouselbuttonLeft.addEventListener ('click', function(){ 
+  let imgArray = [imgDiv1, imgDiv2, imgDiv3, imgDiv4];
+  if (i === 1) {
+    imgArray[0].style = '';
+  }
+  if (i === 2) {
+    imgArray[1].style = '';
+  }
+  if (i === 3) {
+    imgArray[2].style = '';
+  }
+  if (i === 4) {
+      imgArray[3].style = '';
+      i = 0
+    }
+  if (i<imgArray.length) {
+    imgArray[i].style = 'display: inline;'
+    i++
+  } 
+})
 
-
-
-
+carouselbuttonRight.addEventListener ('click', function(){ 
+  let imgArray = [imgDiv1, imgDiv2, imgDiv3, imgDiv4];
+  if (i === 1) {
+    imgArray[0].style = '';
+  }
+  if (i === 2) {
+    imgArray[1].style = '';
+  }
+  if (i === 3) {
+    imgArray[2].style = '';
+  }
+  if (i === 4) {
+      imgArray[3].style = '';
+      i = 0
+    }
+  if (i<imgArray.length) {
+    imgArray[i].style = 'display: inline;'
+    i++
+  } 
+})
 
 
