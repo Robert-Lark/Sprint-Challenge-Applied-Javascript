@@ -18,54 +18,58 @@
   </div>
 */
 
-const carouselContainer = document.createElement('div');
-carouselContainer.classList.add('carousel-container');
+const carousel = document.createElement('div');
+carousel.classList.add = ('carousel');
+
+
 
   function bambamComponant(image){
       //crete the div the image will live in
-      const imgDiv = document.createElement('div');
+      // const imgDiv = document.createElement('div');
       //give it a class
-      imgDiv.classList.add('carouselImgDiv');
+      // imgDiv.classList.add('carouselImgDiv');
       //create the image
       const carouselImg = document.createElement('img');
       // set its source
       carouselImg.src = image;
       carouselImg.style = 'width: 440px; height: 250px;'
       //append it to its div
-      imgDiv.appendChild(carouselImg);
+      // imgDiv.appendChild(carouselImg);
       //give it a class
       carouselImg.classList.add('carouselImg');
     
-      return imgDiv
+      return carouselImg
     }
-    
   
-  
-  
-  
+
   const imgDiv1 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.40.56 PM.png");
   const imgDiv2 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.27 PM.png");
   const imgDiv3 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.48 PM.png");
   const imgDiv4 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.17 PM.png");
 
-  carouselContainer.appendChild(imgDiv1);
-  carouselContainer.appendChild(imgDiv2);
-  carouselContainer.appendChild(imgDiv3);
-  carouselContainer.appendChild(imgDiv4);
+  
 
+  const carouselContainer = document.querySelector('.carousel-container');
+
+  carouselContainer.appendChild(carousel);
+  
   const carouselbuttonLeft = document.createElement('div');
   carouselbuttonLeft.classList.add('left-button');
-  carouselContainer.appendChild(carouselbuttonLeft);
+  carousel.appendChild(carouselbuttonLeft);
+
+  carousel.appendChild(imgDiv1);
+  carousel.appendChild(imgDiv2);
+  carousel.appendChild(imgDiv3);
+  carousel.appendChild(imgDiv4);
 
   const carouselbuttonRight = document.createElement('div');
   carouselbuttonRight.classList.add('right-button');
-  carouselContainer.appendChild(carouselbuttonRight);
+  carousel.appendChild(carouselbuttonRight);
 
 
 
 
-const carcon = document.querySelector('.carousel-container');
-carcon.appendChild(carouselContainer);
+
 
 
 
