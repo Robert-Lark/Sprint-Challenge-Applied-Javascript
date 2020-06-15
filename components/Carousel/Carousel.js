@@ -18,60 +18,91 @@
   </div>
 */
 
-function carousel() {
+const carouselContainer = document.createElement('div');
+carouselContainer.classList.add('carousel-container');
 
-const carouselDiv1 = document.createElement('div');
-const carouselDiv2 = document.createElement('div');
-const carouselDiv3 = document.createElement('div');
-const imgDiv1 = document.createElement('div');
-const imgDiv2 = document.createElement('div');
-const imgDiv3 = document.createElement('div');
-const imgDiv4 = document.createElement('div');
-const carouselImg1 = document.createElement('img');
-const carouselImg2 = document.createElement('img');
-const carouselImg3 = document.createElement('img');
-const carouselImg4 = document.createElement('img');
+  function bambamComponant(image){
+      //crete the div the image will live in
+      const imgDiv = document.createElement('div');
+      //give it a class
+      imgDiv.classList.add('carouselImgDiv');
+      //create the image
+      const carouselImg = document.createElement('img');
+      // set its source
+      carouselImg.src = image;
+      carouselImg.style = 'width: 440px; height: 250px;'
+      //append it to its div
+      imgDiv.appendChild(carouselImg);
+      //give it a class
+      carouselImg.classList.add('carouselImg');
+    
+      return imgDiv
+    }
+    
+  
+  
+  
+  
+  const imgDiv1 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.40.56 PM.png");
+  const imgDiv2 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.27 PM.png");
+  const imgDiv3 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.48 PM.png");
+  const imgDiv4 = bambamComponant("assets/carousel/Screen Shot 2020-06-08 at 1.41.17 PM.png");
 
-carouselDiv1.classList.add('carousel');
-carouselDiv2.classList.add('left-button');
-carouselDiv3.classList.add('right-button');
-carouselImg1.src="./assets/carousel/mountains.jpeg";
-carouselImg2.src="./assets/carousel/computer.jpeg";
-carouselImg3.src="./assets/carousel/trees.jpeg";
-carouselImg4.src="./assets/carousel/turntable.jpeg";
-imgDiv1.classList.add('carouselImg1');
-imgDiv2.classList.add('carouselImg1');
-imgDiv3.classList.add('carouselImg1');
-imgDiv4.classList.add('carouselImg1');
-carouselDiv1.appendChild(carouselDiv2);
-carouselDiv1.appendChild(imgDiv1);
-carouselDiv1.appendChild(imgDiv2);
-carouselDiv1.appendChild(imgDiv3);
-carouselDiv1.appendChild(imgDiv4);
-carouselDiv1.appendChild(carouselImg1);
-imgDiv1.appendChild(carouselImg1);
-carouselDiv1.appendChild(carouselImg2);
-imgDiv2.appendChild(carouselImg2);
-carouselDiv1.appendChild(carouselImg3);
-imgDiv3.appendChild(carouselImg3);
-carouselDiv1.appendChild(carouselImg4);
-imgDiv4.appendChild(carouselImg4);
-carouselDiv1.appendChild(carouselDiv3);
+  carouselContainer.appendChild(imgDiv1);
+  carouselContainer.appendChild(imgDiv2);
+  carouselContainer.appendChild(imgDiv3);
+  carouselContainer.appendChild(imgDiv4);
 
-carouselDiv2.addEventListener('click', function showSlides(n) {
-  var slides = document.getElementsByClassName("carouselImg1");
-  if (n > 3) {
-      slideIndex = 3 
-  }
-  if (n < 1) {
-      slideIndex = 1
-  }
-  slides[0].style.display = "none";
-  slides[1].style.display = "none";
-  slides[2].style.display = "none";
-  slides[slideIndex - 1].style.display = "block";
-})
-return carouselDiv1;
-}
+  const carouselbuttonLeft = document.createElement('div');
+  carouselbuttonLeft.classList.add('left-button');
+  carouselContainer.appendChild(carouselbuttonLeft);
 
-body.appendChild(carousel());
+  const carouselbuttonRight = document.createElement('div');
+  carouselbuttonRight.classList.add('right-button');
+  carouselContainer.appendChild(carouselbuttonRight);
+
+
+
+
+const carcon = document.querySelector('.carousel-container');
+carcon.appendChild(carouselContainer);
+
+
+
+// // carouselbuttonLeft.addEventListener('click', function(){
+// //   const slides = document.querySelectorAll('.carouselImg');
+// //    let slideIndex = Array.from(slides);
+// // let slideArray = [];
+// // console.log(slideArray);
+// //    slideIndex.forEach((img) => {
+// //      slideArray.push(img);
+// //    })
+//   // slideIndex.push(slides[0]);
+//   //   slideIndex.push(slides[1]);
+//   //   slideIndex.push(slides[2]);
+//   //   slideIndex.push(slides[3]);
+
+    
+
+//     // console.log(slide);
+
+// // })
+
+// //   let slideIndex = slides[0];
+  
+// //   function showSlides(n) {
+   
+// //     
+// //     if (n > 4) {
+// //         slideIndex = 1 
+// //     }
+// //     if (n < 1) {
+// //         slideIndex = 3
+// //     }
+// //     slides[0].style.display = "none";
+// //     slides[1].style.display = "none";
+// //     slides[2].style.display = "none";
+// //     slides[3].style.display = "none";
+// // //     slides[slideIndex - 1].style.display = "block";
+// // }
+// // showSlides(slideIndex);
